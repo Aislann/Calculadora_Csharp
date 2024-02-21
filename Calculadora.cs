@@ -1,11 +1,10 @@
-﻿//Calculadora
-
 using System;
 					
 public class Program
 {
 	public static void Main()
 	{
+		//Calculadora
 		int i = 0;
 
 		while (i < 1)
@@ -15,10 +14,10 @@ public class Program
 				"2- Subtração\n" +
 				"3- Multiplicação\n" +
 				"4- Divisão\n" +
-				"5- Resto da divisão" +
-				"6- Potenciação"+
+				"5- Resto da divisão\n" +
+				"6- Potenciação\n"+
 				"0- Parar\n" +
-				"Escolha uma opcao de 1 a 4: ");
+				"Escolha uma opcao de 1 a 6: ");
 			int opcao = Convert.ToInt32(Console.ReadLine());
 			if (opcao == 0){
 			i++;
@@ -42,7 +41,12 @@ public class Program
 				Console.WriteLine($"A multiplicação dos números {num1} e {num2} é: " + $"{num1 * num2}\n");
 				break;
 			case 4:
-				Console.WriteLine($"A divisão dos números {num1} e {num2} é: " + $"{num1 / num2}\n");
+ 				double divisor = num1/num2;
+				if (divisor >= 0){
+				Console.WriteLine("Não é possível dividir por zero.");
+				} else{
+				Console.WriteLine($"A divisão dos números {num1} e {num2} é: " + $"{divisor}\n");
+				}
 				break;
 			case 5:
 				Console.WriteLine($"O resto da divisão {num1} e {num2} é: " + $"{num1 % num2}\n");
@@ -52,9 +56,9 @@ public class Program
 				Console.WriteLine($"A potenciaação de {num1} e {num2} é: " + $"{potencia}\n");
 				break;
 		}
-
-
 		}
+		
+		
 	}
 	
 	
